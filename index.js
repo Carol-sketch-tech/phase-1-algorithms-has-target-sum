@@ -1,17 +1,36 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  const seen = new Set();
+  // iterate through all number sin the array
+  for (let num of array){
+    // calculate teh complement of the current number
+    const complement= target -num;
+     
+    // check if the complement is in the current array
+    if (seen.has(complement)){
+      return true
+    }
+    seen.add(num)
+  }
+   return false
 }
+
 
 /* 
   Write the Big O time complexity of your function here
+  The big O notation for this algorithim is linear time.
 */
 
 /* 
   Add your pseudocode here
+  function that check if any pair of numbers in the arrays adds ap to the target number.
+
 */
 
 /*
   Add written explanation of your solution here
+
+
 */
 
 // You can run `node index.js` to view these console logs
